@@ -32,6 +32,21 @@ final class StringTest extends TestCase
         $this->assertEquals( 'sanitized value', $value );
     }
 
+    //Returns a sanitized empty string
+    public function testEmptyEscapedString() : void
+    {
+        Brain\Monkey\Functions\When( 'sanitize_text_field' )
+            ->justReturn('');
+
+        $_POST = array( 'key'=>'value' );
+
+        $input = new vk_form_input\Input();
+
+        $value = $input->get_string( 'key', null, true );
+
+        $this->assertEquals( '', $value );
+    }
+
     //Returns a non sanitized string
     public function testNonEscapedString() : void
     {
