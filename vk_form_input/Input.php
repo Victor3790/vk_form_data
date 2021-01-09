@@ -8,13 +8,13 @@ namespace vk_form_input;
 
 class Input
 {
-    public function get_string_post( $key = null, $default = null )
+    public function get_string_post( $key = null, $default = null, $escape = false )
     {
         $post_string = $this->get_post_data( $key, $default );
         return $post_string;
     }
 
-    private function get_post_data( $key = null, $default = null )
+    private function get_post_data( $key = null, $default = null, $escape = false )
     {
         if( empty( $key ) )
             throw new \Exception("VK_input: No key passed or the key is not valid", 1);
