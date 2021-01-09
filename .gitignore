@@ -1,3 +1,5 @@
 *.phar
 .phpunit.result.cache
 .vscode/
+vendor/
+composer.lock
