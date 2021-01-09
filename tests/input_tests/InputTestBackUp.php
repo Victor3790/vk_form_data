@@ -1,13 +1,11 @@
 <?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
-use Brain\Monkey;
 
 final class InputTest extends TestCase
 {
     protected function setUp() : void
     {
         parent::setUp();
-        Monkey\setUp();
         $_POST = array();
     }
 
@@ -47,24 +45,14 @@ final class InputTest extends TestCase
         $input->get_string_post('2', 0);
     }
 
-    public function testGetPostString()
+    public function testGetPostString(): void
     {
-        Brain\Monkey\Functions\When( 'sanitize_text_field' )
-            ->returnArg();
-
         $_POST = array( 'key'=>'value' );
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string_post('key');
+        $value = $input->get_string_post('key', 'no data');
 
         $this->assertEquals( 'value', $value );
-    }
-
-    protected function tearDown() : void
-    {
-        Monkey\tearDown();
-
-        parent::tearDown();
     }
 }

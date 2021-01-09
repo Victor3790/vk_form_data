@@ -1,5 +1,11 @@
 {
     "require-dev": {
-        "brain/monkey": "2.*"
+        "brain/monkey": "2.*",
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4":{
+            "vk_form_input\\": "vk_form_input"
+        }
     }
 }

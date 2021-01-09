@@ -25,6 +25,8 @@ class Input
         $value = (isset($_POST[$key])) ? $_POST[$key] : false;
         $value = (!empty($value)) ? $value : $default;
 
+        sanitize_text_field($value);
+
         return $value;
     }
 }
