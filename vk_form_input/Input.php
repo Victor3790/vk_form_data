@@ -10,14 +10,14 @@ class Input
 {
     public function get_string( $key = null, $default = null, $escape = false, $request = null )
     {
-        $string = $this->get_post_data( $key, $default, $request );
+        $string = $this->get_data( $key, $default, $request );
 
         return $this->escape_text_field( $string, $escape );
     }
 
-    public function get_numeric( $key = null, $default = null, $escape = false )
+    public function get_numeric( $key = null, $default = null, $escape = false, $request = null )
     {
-        $raw_numeric = $this->get_post_data( $key, $default, $escape );
+        $raw_numeric = $this->get_data( $key, $default, $request );
 
         $numeric =  $this->escape_text_field( $raw_numeric, $escape );
 
@@ -27,7 +27,7 @@ class Input
         return $numeric;
     }
 
-    private function get_post_data( $key = null, $default = null, $request = null )
+    private function get_data( $key = null, $default = null, $request = null )
     {
         if( empty( $key ) )
             throw new \Exception("VK_input: No key passed or the key is not valid", 1);
