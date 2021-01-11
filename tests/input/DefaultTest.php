@@ -22,7 +22,7 @@ final class DefaultTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key1', -1 );
+        $value = $input->get_string( 'key1', -1, false, 'post' );
 
         $this->assertEquals( -1, $value );
     }
@@ -34,7 +34,7 @@ final class DefaultTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key1', 'No value' );
+        $value = $input->get_string( 'key1', 'No value', false, 'post' );
 
         $this->assertEquals( 'No value', $value );
     }
@@ -46,7 +46,7 @@ final class DefaultTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key1' );
+        $value = $input->get_string( 'key1', null, false, 'post' );
 
         $this->assertEquals( null, $value );
     }
