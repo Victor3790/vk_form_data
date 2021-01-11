@@ -11,7 +11,7 @@ final class KeyTest extends TestCase
     //A key in $_POST must be passed
     public function testAPostKeyParameterMustBePassed(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(100);
 
         $input = new vk_form_input\Input();
 
@@ -21,7 +21,7 @@ final class KeyTest extends TestCase
     //The key will be tested with empty() (It must not be empty)
     public function testANonEmptyPostKeyParameterMustBePassed(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(100);
 
         $input = new vk_form_input\Input();
 
@@ -31,7 +31,7 @@ final class KeyTest extends TestCase
     //The key can't be a number or a numeric string
     public function testThePostKeyParameterMustBeAString(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(101);
 
         $input = new vk_form_input\Input();
 
@@ -41,7 +41,7 @@ final class KeyTest extends TestCase
     //The key can't be a number or a numeric string
     public function testThePostKeyParameterCannotBeANumericString(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(101);
 
         $input = new vk_form_input\Input();
 

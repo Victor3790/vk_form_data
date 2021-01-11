@@ -18,7 +18,7 @@ final class RequestTest extends TestCase
     //An http request type must be passed
     public function testAnHttpRequestTypeMustBePassed(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(102);
 
         $input = new vk_form_input\Input();
 
@@ -28,7 +28,7 @@ final class RequestTest extends TestCase
     //The "request" parameter must be a string
     public function testRequestMustBeAString(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(103);
 
         $input = new vk_form_input\Input();
 
@@ -38,7 +38,7 @@ final class RequestTest extends TestCase
     //The "request" parameter must be a non numeric string
     public function testRequestMustBeANonNumericString(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(103);
 
         $input = new vk_form_input\Input();
 
@@ -48,7 +48,7 @@ final class RequestTest extends TestCase
     //The "request" parameter must be "POST" or "GET"
     public function testRequestMustBePostOrGet(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(104);
 
         $input = new vk_form_input\Input();
 

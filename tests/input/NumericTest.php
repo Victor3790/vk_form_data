@@ -66,7 +66,7 @@ final class NumericTest extends TestCase
     //A key points to a non numeric string
     public function testANonNumericStringWasReturned(): void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(106);
 
         $_GET = array( 'key'=>'123zabc' );
 

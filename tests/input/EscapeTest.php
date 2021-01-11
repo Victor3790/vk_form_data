@@ -21,7 +21,7 @@ final class EscapeTest extends TestCase
     //A non boolean value is passed as "escape"
     public function testEscapeMustBeBooleanNotInt() : void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(105);
 
         $_POST = array( 'key'=>'value' );
 
@@ -33,7 +33,7 @@ final class EscapeTest extends TestCase
     //A non boolean value is passed as "escape"
     public function testEscapeMustBeBooleanNotString() : void
     {
-        $this->expectException('Exception');
+        $this->expectExceptionCode(105);
 
         $_POST = array( 'key'=>'value' );
 
