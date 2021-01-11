@@ -32,7 +32,7 @@ class Input
         if( empty( $format ) )
             throw new \Exception("VK_input: No format passed or invalid", 107);
 
-        if( !is_string( $format ) )
+        if( !is_string( $format ) || is_numeric( $format ) )
             throw new \Exception("VK_input: Format must be a string", 108);
 
         $raw_date_time = $this->get_data( $key, $default, $request );
