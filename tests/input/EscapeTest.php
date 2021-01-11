@@ -27,7 +27,7 @@ final class EscapeTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_string( 'key', null, 1 );
+        $input->get_string( 'key', 'post', 1 );
     }
 
     //A non boolean value is passed as "escape"
@@ -39,7 +39,7 @@ final class EscapeTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_string( 'key', null, 'falso' );
+        $input->get_string( 'key', 'post', 'falso' );
     }
 
     protected function tearDown() : void

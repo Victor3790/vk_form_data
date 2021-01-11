@@ -22,7 +22,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_string( 'key', null, true );
+        $input->get_string( 'key' );
     }
 
     //The "request" parameter must be a string
@@ -32,7 +32,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_string( 'key', null, true, 1 );
+        $input->get_string( 'key', 1 );
     }
 
     //The "request" parameter must be a non numeric string
@@ -42,7 +42,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_string( 'key', null, true, '1' );
+        $input->get_string( 'key', '1' );
     }
 
     //The "request" parameter must be "POST" or "GET"
@@ -52,7 +52,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_string( 'key', null, true, 'request' );
+        $input->get_string( 'key', 'request' );
     }
 
     //Request can be upper case
@@ -63,7 +63,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'get_key', null, false, 'GET' );
+        $value = $input->get_string( 'get_key', 'GET' );
 
         $this->assertEquals( 'get_value', $value );
     }
@@ -76,7 +76,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'get_key', null, false, 'get' );
+        $value = $input->get_string( 'get_key', 'get' );
 
         $this->assertEquals( 'get_value', $value );
     }
@@ -89,7 +89,7 @@ final class RequestTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'post_key', null, false, 'PoSt' );
+        $value = $input->get_string( 'post_key', 'PoSt' );
 
         $this->assertEquals( 'post_value', $value );
     }

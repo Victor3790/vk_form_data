@@ -28,7 +28,7 @@ final class NumericTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_numeric( 'key', null, true, 'POST' );
+        $value = $input->get_numeric( 'key', 'POST', true );
 
         $this->assertEquals( '0123', $value );
     }
@@ -43,7 +43,7 @@ final class NumericTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key', null, true, 'get'  );
+        $value = $input->get_string( 'key', 'get', true );
 
         $this->assertEquals( '', $value );
     }
@@ -58,7 +58,7 @@ final class NumericTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key', null, (bool)0, 'POST'  );
+        $value = $input->get_string( 'key', 'POST', (bool)0 );
 
         $this->assertEquals( '123', $value );
     }
@@ -72,7 +72,7 @@ final class NumericTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_numeric( 'key', 0, false, 'get' );
+        $input->get_numeric( 'key', 'get', false );
     }
 
     protected function tearDown() : void

@@ -8,14 +8,14 @@ namespace vk_form_input;
 
 class Input
 {
-    public function get_string( $key = null, $default = null, $escape = false, $request = null )
+    public function get_string( $key = null, $request = null, $escape = false, $default = null )
     {
         $string = $this->get_data( $key, $default, $request );
 
         return $this->escape_text_field( $string, $escape );
     }
 
-    public function get_numeric( $key = null, $default = null, $escape = false, $request = null )
+    public function get_numeric( $key = null, $request = null, $escape = false, $default = null )
     {
         $raw_numeric = $this->get_data( $key, $default, $request );
 

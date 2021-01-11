@@ -27,7 +27,7 @@ final class StringTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key', null, true, 'POST' );
+        $value = $input->get_string( 'key', 'POST', true );
 
         $this->assertEquals( 'sanitized value', $value );
     }
@@ -42,7 +42,7 @@ final class StringTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key', null, true, 'POST'  );
+        $value = $input->get_string( 'key', 'POST', true );
 
         $this->assertEquals( '', $value );
     }
@@ -57,7 +57,7 @@ final class StringTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key', null, (bool)0, 'POST'  );
+        $value = $input->get_string( 'key', 'POST', (bool)0  );
 
         $this->assertEquals( 'value', $value );
     }
