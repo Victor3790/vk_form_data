@@ -37,12 +37,19 @@ class Input
 
         $raw_date_time = $this->get_data( $key, $default, $request );
 
-        $date_time =  $this->escape_text_field( $raw_numeric, $escape );
+        $date_time =  $this->escape_text_field( $raw_date_time, $escape );
 
-        /*if( !is_numeric( $numeric ) )
-            throw new \Exception("VK_input: The value is not numeric", 1);*/
+        $date_time_object = \DateTime::createFromFormat( $format, $date_time );
 
-        return $numeric;
+        if( $date_time_object === false )
+            throw new \Exception("VK_input: Date-time value or its format were not valid.", 109);
+
+        $format_date_time = $date_time_object->format($format);
+
+        if( $format_date_time !== $date_time )
+            throw new \Exception("VK_input: Date-time value was not valid.", 110);
+
+        return $date_time;
     }
 
     private function get_data( $key = null, $default = null, $request = null )
