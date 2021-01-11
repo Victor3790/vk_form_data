@@ -8,9 +8,9 @@ namespace vk_form_input;
 
 class Input
 {
-    public function get_string( $key = null, $default = null, $escape = false )
+    public function get_string( $key = null, $default = null, $escape = false, $request = null )
     {
-        $string = $this->get_post_data( $key, $default, $escape );
+        $string = $this->get_post_data( $key, $default, $request );
 
         return $this->escape_text_field( $string, $escape );
     }
@@ -27,16 +27,37 @@ class Input
         return $numeric;
     }
 
-    private function get_post_data( $key = null, $default = null )
+    private function get_post_data( $key = null, $default = null, $request = null )
     {
         if( empty( $key ) )
             throw new \Exception("VK_input: No key passed or the key is not valid", 1);
 
         if( !is_string( $key ) || is_numeric( $key ) )
             throw new \Exception("VK_input: The key must be a string", 1);
+
+        if( empty( $request ) )
+            throw new \Exception("VK_input: No request parameter passed or it is not valid", 1);
+
+        if( !is_string( $request ) || is_numeric( $request ) )
+            throw new \Exception("VK_input: The request parameter must be a string", 1);
+
+        $lower_request = strtolower( $request );
+
+        switch ( $lower_request ) {
+            case 'post':
+                $value = (isset($_POST[$key])) ? $_POST[$key] : false;
+                $value = (!empty($value)) ? $value : $default;
+                break;
+
+            case 'get':
+                $value = (isset($_GET[$key])) ? $_GET[$key] : false;
+                $value = (!empty($value)) ? $value : $default;
+                break;
             
-        $value = (isset($_POST[$key])) ? $_POST[$key] : false;
-        $value = (!empty($value)) ? $value : $default;
+            default:
+                throw new \Exception("VK_input: The http request is not valid", 1);
+                break;
+        }
 
         return $value;
     }
