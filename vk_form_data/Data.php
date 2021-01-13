@@ -5,8 +5,10 @@
 namespace vk_form_data;
 
 include_once 'vk_form_input/Input.php';
+include_once 'vk_form_string/String_Type.php';
 
 use vk_form_input;
+use vk_form_string;
 
 class Data
 {
@@ -64,11 +66,15 @@ class Data
 
             switch ( $type ) {
                 case 'string':
-                    $input_value = $this->input->get_string( 
-                                                    $input_options['input_name'], 
-                                                    $this->request,
-                                                    $sanitize
-                                                );
+                    $string_type = new vk_form_string\String_Type;
+
+                    $raw_value = $this->input->get_string( 
+                        $input_options['input_name'], 
+                        $this->request,
+                        $sanitize
+                    );
+
+                    $valid = $string_type->get_valid_string( $input_options, $raw_value );
                     break;
 
                 case 'numeric':
@@ -84,7 +90,7 @@ class Data
                     break;
             }
 
-            $input_values[ $input_options['input_name']] = $input_value;
+            $input_values[ $input_options['input_name']] = $valid;
         }
 
         return $input_values;
@@ -116,7 +122,8 @@ class Data
 
         if( 
             !isset( $input_options['validation'] ) || 
-            !is_array( $input_options['validation'] )
+            !is_array( $input_options['validation'] ) ||
+            empty( $input_options['validation'] )
         )
             throw new \Exception("VK_data: \"Validation\" parameter must be passed and it must be an array", 
                                     208);
