@@ -156,6 +156,29 @@ final class StringTypeTest extends TestCase
 
     }
 
+    //The first item in "validation" value is not string or integer
+    public function testIncorrectFirstItemPassedAsValidation(): void
+    {
+        $this->expectExceptionCode(216);
+
+        $_GET = [ 'gender' => 'Male' ];
+
+        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+
+        $options = [
+            [
+                'input_name' => 'gender',
+                'type' => 'string',
+                'validation' => [true, '1', '2']
+            ]
+        ];
+
+        $form_data->set_options( $options, 'get' );
+
+        $input_values = $form_data->get();
+
+    }
+
     //Passed string is not in validation array
     public function testPassedStringIsNotInValidationArray(): void
     {

@@ -25,6 +25,8 @@ class String_Type
             return $valid_string;
 
         }
+
+        throw new \Exception("VK_data: Items in the \"validation\" array must be integer or string", 216);
     }
 
     private function get_string_int_validation( $validation, $input_options, $raw_value )
