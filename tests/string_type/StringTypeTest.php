@@ -133,6 +133,29 @@ final class StringTypeTest extends TestCase
         $input_values = $form_data->get();
     }
 
+    //Multiple numeric string values passed as validation
+    public function testNumericStringValuesPassedAsValidation(): void
+    {
+        $this->expectExceptionCode(214);
+
+        $_GET = [ 'gender' => 'Male' ];
+
+        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+
+        $options = [
+            [
+                'input_name' => 'gender',
+                'type' => 'string',
+                'validation' => ['Male', '1', '2']
+            ]
+        ];
+
+        $form_data->set_options( $options, 'get' );
+
+        $input_values = $form_data->get();
+
+    }
+
     //Passed string is not in validation array
     public function testPassedStringIsNotInValidationArray(): void
     {
