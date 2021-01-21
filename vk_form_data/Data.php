@@ -6,9 +6,11 @@ namespace vk_form_data;
 
 include_once 'vk_form_input/Input.php';
 include_once 'vk_form_string/String_Type.php';
+include_once 'vk_form_numeric/Numeric_Type.php';
 
 use vk_form_input;
 use vk_form_string;
+use vk_form_numeric;
 
 class Data
 {
@@ -78,11 +80,15 @@ class Data
                     break;
 
                 case 'numeric':
-                    $input_value = $this->input->get_numeric( 
-                                                    $input_options['input_name'], 
-                                                    $this->request,
-                                                    $sanitize
-                                                );
+                    $numeric_type = new vk_form_numeric\Numeric_Type;
+
+                    $raw_value = $this->input->get_numeric( 
+                        $input_options['input_name'], 
+                        $this->request,
+                        $sanitize
+                    );
+
+                    $valid = $numeric_type->get_valid_numeric( $input_options, $raw_value );
                     break;
                 
                 default:
