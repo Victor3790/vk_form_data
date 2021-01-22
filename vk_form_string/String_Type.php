@@ -65,7 +65,7 @@ class String_Type
     {
         foreach ($validation as $item) {
                 
-            if( !is_string( $item ) || is_numeric( $item ) )
+            if( !is_string( $item ) )
                 throw new \Exception("vk_data: All items must be strings", 214);
 
         }
