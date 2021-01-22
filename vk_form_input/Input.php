@@ -27,6 +27,18 @@ class Input
         return $numeric;
     }
 
+    public function get_digit( $key = null, $request = null, $escape = false, $default = null )
+    {
+        $raw_digit = $this->get_data( $key, $default, $request );
+
+        $digit =  $this->escape_text_field( $raw_numeric, $escape );
+
+        if( !ctype_digit( $digit ) )
+            throw new \Exception("VK_input: The string does not contain only digits", 111);
+
+        return $numeric;
+    }
+
     public function get_date_time( $key = null, $request = null, $format = null, $escape = false, $default = null )
     {
         if( empty( $format ) )

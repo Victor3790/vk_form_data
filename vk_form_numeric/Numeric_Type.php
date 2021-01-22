@@ -24,7 +24,7 @@ class Numeric_Type
 
         foreach ($items as $item) {
                 
-            if( !is_int( $item ) || $item <= 0 )
+            if( !is_numeric( $item ) )
                 throw new \Exception("vk_data: All items must be positive integers", 302);
 
         }

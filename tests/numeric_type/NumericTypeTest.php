@@ -5,7 +5,7 @@ use Brain\Monkey;
 
 /*
 ** Validations to consider when the 
-** data to get is numeric
+** data to get is numeric either int or float
 */
 
 final class NumericTypeTest extends TestCase
@@ -173,8 +173,8 @@ final class NumericTypeTest extends TestCase
         $numeric = $form_data->get();
     }
 
-    //Value in range
-    public function testValueInRange(): void
+    //Value in range int
+    public function testValueInRangeInteger(): void
     {
         $form_data = new vk_form_data\Data( new vk_form_input\Input );
 
@@ -200,6 +200,37 @@ final class NumericTypeTest extends TestCase
             $this->assertEquals( $i, $numeric['month'] );
 
             //echo $numeric['month'] . ' ';
+
+        }
+    }
+
+    //Value in range float
+    public function testValueInRangeFloat(): void
+    {
+        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+
+        $min = 36.1;
+        $max = 37.4;
+
+        for ( $i=$min; $i <= $max ; $i += 0.1 ) { 
+
+            $_GET = [ 'temp' => $i ];
+
+            $options = [
+                [
+                    'input_name' => 'temp',
+                    'type' => 'numeric',
+                    'validation' => [ $min, $max ]
+                ]
+            ];
+    
+            $form_data->set_options( $options, 'get' );
+    
+            $numeric = $form_data->get();
+    
+            //echo $numeric['temp'] . ' ';
+
+            $this->assertEquals( $i, $numeric['temp'] );
 
         }
     }
