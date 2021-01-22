@@ -102,6 +102,19 @@ class Data
 
                     $valid = $digit_type->get_valid_string( $input_options, $raw_value );
                     break;
+
+                case 'date_time':
+                    $date_time_type = new vk_form_string\String_Type;
+
+                    $raw_value = $this->input->get_date_time( 
+                        $input_options['input_name'], 
+                        $this->request,
+                        $input_options['validation'][0],
+                        $sanitize
+                    );
+
+                    $valid = $date_time_type->get_valid_string( $input_options, $raw_value );
+                    break;
                 
                 default:
                     throw new \Exception("VK_data: \"type\" is not a valid option.", 209);

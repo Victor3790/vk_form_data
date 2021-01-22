@@ -70,6 +70,9 @@ class String_Type
 
         }
 
+        if( $input_options['type'] === 'date_time' )
+            return $raw_value;
+
         $in_array = in_array( $raw_value, $validation, true );
 
         if( $in_array )
