@@ -134,7 +134,7 @@ final class StringTypeTest extends TestCase
     }
 
     //Multiple numeric string values passed as validation
-    public function testNumericStringValuesPassedAsValidation(): void
+    /*public function testNumericStringValuesPassedAsValidation(): void
     {
         $this->expectExceptionCode(214);
 
@@ -154,7 +154,7 @@ final class StringTypeTest extends TestCase
 
         $input_values = $form_data->get();
 
-    }
+    }*/
 
     //The first item in "validation" value is not string or integer
     public function testIncorrectFirstItemPassedAsValidation(): void
