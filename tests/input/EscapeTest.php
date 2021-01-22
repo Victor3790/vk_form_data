@@ -25,7 +25,7 @@ final class EscapeTest extends TestCase
 
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string( 'key', 'post', 1 );
     }
@@ -37,7 +37,7 @@ final class EscapeTest extends TestCase
 
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string( 'key', 'post', 'falso' );
     }

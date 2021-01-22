@@ -5,7 +5,7 @@
 ** numeric values can either be integer or 
 ** float values.
 */
-namespace vk_form_numeric;
+namespace vk_form_data\numeric_type;
 
 class Numeric_Type
 {

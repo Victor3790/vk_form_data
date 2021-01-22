@@ -26,7 +26,7 @@ final class DigitTest extends TestCase
 
         $_POST = array( 'key'=>'123' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_digit( 'key', 'POST', true );
 
@@ -41,7 +41,7 @@ final class DigitTest extends TestCase
 
         $_GET = array( 'key'=>'123' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_digit( 'key', 'get', true );
 
@@ -56,7 +56,7 @@ final class DigitTest extends TestCase
 
         $_POST = array( 'key'=>'123' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_digit( 'key', 'POST', (bool)0 );
 
@@ -70,7 +70,7 @@ final class DigitTest extends TestCase
 
         $_GET = array( 'key'=>'123zabc' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_digit( 'key', 'get', false );
     }

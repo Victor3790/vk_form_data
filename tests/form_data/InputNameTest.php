@@ -13,7 +13,7 @@ final class InputNameTest extends TestCase
     {
         $this->expectExceptionCode(206);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -31,7 +31,7 @@ final class InputNameTest extends TestCase
     {
         $this->expectExceptionCode(206);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -49,7 +49,7 @@ final class InputNameTest extends TestCase
     {
         $this->expectExceptionCode(206);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

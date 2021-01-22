@@ -4,7 +4,7 @@
 **  It should be used to get data from html forms.
 */
 
-namespace vk_form_input;
+namespace vk_form_data\input;
 
 class Input
 {

@@ -20,7 +20,7 @@ final class DefaultTest extends TestCase
     {
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'key1','post', false, -1 );
 
@@ -32,7 +32,7 @@ final class DefaultTest extends TestCase
     {
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'key1','post', false, 'No value' );
 
@@ -44,7 +44,7 @@ final class DefaultTest extends TestCase
     {
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'key1','post', false );
 

@@ -23,7 +23,7 @@ final class DigitTypeTest extends TestCase
     {
         $this->expectExceptionCode(209);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -43,7 +43,7 @@ final class DigitTypeTest extends TestCase
     {
         $_GET = [ 'zip_code' => '55060' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -69,7 +69,7 @@ final class DigitTypeTest extends TestCase
 
         $_GET = [ 'zip_code' => '55060' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -95,7 +95,7 @@ final class DigitTypeTest extends TestCase
 
         $_GET = [ 'zip_code' => '55060' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -117,7 +117,7 @@ final class DigitTypeTest extends TestCase
 
         $_GET = [ 'zip_code' => '55060' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -143,7 +143,7 @@ final class DigitTypeTest extends TestCase
 
         $_GET = [ 'zip_code' => '55060' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -166,7 +166,7 @@ final class DigitTypeTest extends TestCase
 
         $_GET = [ 'zip_code' => '55060' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

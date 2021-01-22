@@ -13,7 +13,7 @@ final class ValidationTest extends TestCase
     {
         $this->expectExceptionCode(208);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -32,7 +32,7 @@ final class ValidationTest extends TestCase
     {
         $this->expectExceptionCode(208);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -52,7 +52,7 @@ final class ValidationTest extends TestCase
     {
         $this->expectExceptionCode(208);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

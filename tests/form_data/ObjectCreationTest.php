@@ -11,7 +11,7 @@ final class ObjectCreationTest extends TestCase
     //Form_Data object creation
     public function testForm_DataObjectCreation(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $this->assertInstanceOf( 'vk_form_data\Data', $form_data );
     }

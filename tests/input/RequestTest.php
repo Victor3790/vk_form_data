@@ -20,7 +20,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(102);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string( 'key' );
     }
@@ -30,7 +30,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(103);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string( 'key', 1 );
     }
@@ -40,7 +40,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(103);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string( 'key', '1' );
     }
@@ -50,7 +50,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(104);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string( 'key', 'request' );
     }
@@ -61,7 +61,7 @@ final class RequestTest extends TestCase
         $_POST = array( 'post_key' => 'post_value' );
         $_GET  = array( 'get_key' => 'get_value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'get_key', 'GET' );
 
@@ -74,7 +74,7 @@ final class RequestTest extends TestCase
         $_POST = array( 'post_key' => 'post_value' );
         $_GET  = array( 'get_key' => 'get_value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'get_key', 'get' );
 
@@ -87,7 +87,7 @@ final class RequestTest extends TestCase
         $_POST = array( 'post_key' => 'post_value' );
         $_GET  = array( 'get_key' => 'get_value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'post_key', 'PoSt' );
 

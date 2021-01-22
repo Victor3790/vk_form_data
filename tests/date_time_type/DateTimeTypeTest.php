@@ -23,7 +23,7 @@ final class DateTimeTypeTest extends TestCase
     {
         $_GET = [ 'date' => '01/21/2021' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -49,7 +49,7 @@ final class DateTimeTypeTest extends TestCase
 
         $_GET = [ 'date' => '01/21/2021' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

@@ -23,7 +23,7 @@ final class NumericTypeTest extends TestCase
     {
         $this->expectExceptionCode(209);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -45,7 +45,7 @@ final class NumericTypeTest extends TestCase
 
         $_GET = [ 'rooms' => '3' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -67,7 +67,7 @@ final class NumericTypeTest extends TestCase
 
         $_GET = [ 'rooms' => '3' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -89,7 +89,7 @@ final class NumericTypeTest extends TestCase
 
         $_GET = [ 'rooms' => '3' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -107,7 +107,7 @@ final class NumericTypeTest extends TestCase
     //Value out of range before
     public function testValueOutOfRangeBefore(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $this->expectExceptionCode(303);
 
@@ -130,7 +130,7 @@ final class NumericTypeTest extends TestCase
     //Value out of range zero
     public function testValueOutOfRangeZero(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $this->expectExceptionCode(303);
 
@@ -153,7 +153,7 @@ final class NumericTypeTest extends TestCase
     //Value out of range after
     public function testValueOutOfRangeAfter(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $this->expectExceptionCode(303);
 
@@ -176,7 +176,7 @@ final class NumericTypeTest extends TestCase
     //Value in range int
     public function testValueInRangeInteger(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $min = 1;
         $max = 12;
@@ -207,7 +207,7 @@ final class NumericTypeTest extends TestCase
     //Value in range float
     public function testValueInRangeFloat(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $min = 36.1;
         $max = 37.4;

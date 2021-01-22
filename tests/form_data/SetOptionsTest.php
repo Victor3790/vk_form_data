@@ -13,7 +13,7 @@ final class SetOptionsTest extends TestCase
     {
         $this->expectExceptionCode(200);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $form_data->set_options();
     }
@@ -23,7 +23,7 @@ final class SetOptionsTest extends TestCase
     {
         $this->expectExceptionCode(201);
         
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = 100;
 
@@ -35,7 +35,7 @@ final class SetOptionsTest extends TestCase
     {
         $this->expectExceptionCode(202);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             'key' => 'value'
@@ -49,7 +49,7 @@ final class SetOptionsTest extends TestCase
     {
         $this->expectExceptionCode(203);
         
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             'key' => 'value'
@@ -61,7 +61,7 @@ final class SetOptionsTest extends TestCase
     //An "options" parameter was correctly passed
     public function testGetOptionsFunctionWorks(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             'key' => 'value'
@@ -77,7 +77,7 @@ final class SetOptionsTest extends TestCase
     //A "request" parameter was correctly passed
     public function testGetRequestFunctionWorks(): void
     {
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             'key' => 'value'

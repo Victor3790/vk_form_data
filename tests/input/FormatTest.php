@@ -13,7 +13,7 @@ final class FormatTest extends TestCase
     {
         $this->expectExceptionCode(107);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_date_time( 'key', 'post' );
     }
@@ -23,7 +23,7 @@ final class FormatTest extends TestCase
     {
         $this->expectExceptionCode(107);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_date_time('key', 'post', false);
     }
@@ -33,7 +33,7 @@ final class FormatTest extends TestCase
     {
         $this->expectExceptionCode(108);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_date_time( 'key', 'post', 1 );
     }
@@ -43,7 +43,7 @@ final class FormatTest extends TestCase
     {
         $this->expectExceptionCode(108);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_date_time( 'key', 'post', '5' );
     }

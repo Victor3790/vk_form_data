@@ -13,7 +13,7 @@ final class TypeTest extends TestCase
     {
         $this->expectExceptionCode(207);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -31,7 +31,7 @@ final class TypeTest extends TestCase
     {
         $this->expectExceptionCode(207);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -50,7 +50,7 @@ final class TypeTest extends TestCase
     {
         $this->expectExceptionCode(207);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

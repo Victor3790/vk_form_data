@@ -13,7 +13,7 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(100);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string();
     }
@@ -23,7 +23,7 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(100);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string(0, 0);
     }
@@ -33,7 +33,7 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(101);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string(2, 0);
     }
@@ -43,7 +43,7 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(101);
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $input->get_string('2', 0);
     }

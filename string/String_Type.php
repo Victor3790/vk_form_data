@@ -3,7 +3,7 @@
 ** This function processes all the requests that
 ** for strings and validates them.
 */
-namespace vk_form_string;
+namespace vk_form_data\string_type;
 
 class String_Type
 {

@@ -13,7 +13,7 @@ final class GetTest extends TestCase
     {
         $this->expectExceptionCode(204);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             null, 0
@@ -29,7 +29,7 @@ final class GetTest extends TestCase
     {
         $this->expectExceptionCode(205);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             'key', 3

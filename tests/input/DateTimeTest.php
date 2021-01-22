@@ -26,7 +26,7 @@ final class DateTimeTest extends TestCase
 
         $_GET = array( 'key' => '01/11/2021' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'get', 'x-y-z' );
     }
@@ -38,7 +38,7 @@ final class DateTimeTest extends TestCase
 
         $_GET = array( 'key' => 'hola' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'get', 'd/m/Y' );
     }
@@ -50,7 +50,7 @@ final class DateTimeTest extends TestCase
 
         $_GET = array( 'key' => '32/13/2020' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'get', 'd/m/Y' );
     }
@@ -65,7 +65,7 @@ final class DateTimeTest extends TestCase
 
         $_POST = array( 'key'=>'32/13/2020' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'POST', 'd/m/Y', true );
     }
@@ -78,7 +78,7 @@ final class DateTimeTest extends TestCase
 
         $_POST = array( 'key'=>'01/11/2021' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'POST', 'd/m/Y', true );
 
@@ -93,7 +93,7 @@ final class DateTimeTest extends TestCase
 
         $_POST = array( 'key'=>'01/11/2021' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'POST', 'd/m/Y', false );
 
@@ -108,7 +108,7 @@ final class DateTimeTest extends TestCase
 
         $_POST = array( 'key'=>'02:32 pm' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'POST', 'h:i a', true );
 
@@ -123,7 +123,7 @@ final class DateTimeTest extends TestCase
 
         $_POST = array( 'key'=>'02:32 pm' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_date_time( 'key', 'POST', 'h:i a', false );
 

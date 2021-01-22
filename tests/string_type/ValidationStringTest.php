@@ -18,13 +18,13 @@ final class ValidationStringTest extends TestCase
     }
 
     //string length one in validation must be a positive integer.
-    public function testValidationOneMustBeAPositiveInteger(): void
+    /*public function testValidationOneMustBeAPositiveInteger(): void
     {
         $this->expectExceptionCode(210);
 
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input, new vk_form_string\String_Type );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input, new vk_form_string\String_Type );
 
         $options = [
             [
@@ -37,7 +37,7 @@ final class ValidationStringTest extends TestCase
         $form_data->set_options( $options, 'get' );
 
         $form_data->get();
-    }
+    }*/
 
     /*"Validation" is an array of one int item, the 
     **string length must be equal to the value passed.*/
@@ -49,7 +49,7 @@ final class ValidationStringTest extends TestCase
 
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -69,7 +69,7 @@ final class ValidationStringTest extends TestCase
     {
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input, new vk_form_string\String_Type );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -91,13 +91,13 @@ final class ValidationStringTest extends TestCase
     ** If more values are passed, they will be ignored.*/
 
     //string length two in validation must be a positive integer.
-    public function testValidationTwoMustBeAnInteger(): void
+    /*public function testValidationTwoMustBeAnInteger(): void
     {
         $this->expectExceptionCode(211);
 
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input, new vk_form_string\String_Type );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input, new vk_form_string\String_Type );
 
         $options = [
             [
@@ -110,16 +110,16 @@ final class ValidationStringTest extends TestCase
         $form_data->set_options( $options, 'get' );
 
         $form_data->get();
-    }
+    }*/
 
     //string length two in validation must be a positive integer.
-    public function testValidationTwoMustBeAPositiveInteger(): void
+    /*public function testValidationTwoMustBeAPositiveInteger(): void
     {
         $this->expectExceptionCode(211);
 
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input, new vk_form_string\String_Type );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input, new vk_form_string\String_Type );
 
         $options = [
             [
@@ -132,7 +132,7 @@ final class ValidationStringTest extends TestCase
         $form_data->set_options( $options, 'get' );
 
         $form_data->get();
-    }
+    }*/
 
     //Incorrect multiple items validation string
     public function testInvalidMultipleItemValidationString(): void
@@ -141,7 +141,7 @@ final class ValidationStringTest extends TestCase
 
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input, new vk_form_string\String_Type );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -161,7 +161,7 @@ final class ValidationStringTest extends TestCase
     {
         $_GET = ['user_code' => '1A2B3C4D5E'];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input, new vk_form_string\String_Type );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

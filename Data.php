@@ -4,13 +4,13 @@
 */
 namespace vk_form_data;
 
-include_once 'vk_form_input/Input.php';
-include_once 'vk_form_string/String_Type.php';
-include_once 'vk_form_numeric/Numeric_Type.php';
+include_once 'input/Input.php';
+include_once 'string/String_Type.php';
+include_once 'numeric/Numeric_Type.php';
 
-use vk_form_input;
-use vk_form_string;
-use vk_form_numeric;
+use vk_form_data\input;
+use vk_form_data\string_type;
+use vk_form_data\numeric_type;
 
 class Data
 {
@@ -18,7 +18,7 @@ class Data
     private $options;
     private $request;
 
-    public function __construct( vk_form_input\Input $input )
+    public function __construct( input\Input $input )
     {
         $this->input = $input;
     }
@@ -68,7 +68,7 @@ class Data
 
             switch ( $type ) {
                 case 'string':
-                    $string_type = new vk_form_string\String_Type;
+                    $string_type = new string_type\String_Type;
 
                     $raw_value = $this->input->get_string( 
                         $input_options['input_name'], 
@@ -80,7 +80,7 @@ class Data
                     break;
 
                 case 'numeric':
-                    $numeric_type = new vk_form_numeric\Numeric_Type;
+                    $numeric_type = new numeric_type\Numeric_Type;
 
                     $raw_value = $this->input->get_numeric( 
                         $input_options['input_name'], 
@@ -92,7 +92,7 @@ class Data
                     break;
 
                 case 'digit':
-                    $digit_type = new vk_form_string\String_Type;
+                    $digit_type = new string_type\String_Type;
 
                     $raw_value = $this->input->get_digit( 
                         $input_options['input_name'], 
@@ -104,7 +104,7 @@ class Data
                     break;
 
                 case 'date_time':
-                    $date_time_type = new vk_form_string\String_Type;
+                    $date_time_type = new string_type\String_Type;
 
                     $raw_value = $this->input->get_date_time( 
                         $input_options['input_name'], 

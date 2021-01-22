@@ -5,7 +5,7 @@
     },
     "autoload": {
         "psr-4":{
-            "vk_form_data\\": "vk_form_data"
+            "vk_form_data\\": "./"
         }
     }
 }

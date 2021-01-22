@@ -23,7 +23,7 @@ final class StringTypeTest extends TestCase
     {
         $this->expectExceptionCode(209);
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -43,7 +43,7 @@ final class StringTypeTest extends TestCase
     {
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -69,7 +69,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -95,7 +95,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -118,7 +118,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -140,7 +140,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -163,7 +163,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -189,7 +189,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Gay' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [
@@ -212,7 +212,7 @@ final class StringTypeTest extends TestCase
 
         $_GET = [ 'gender' => 'Male' ];
 
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $form_data = new vk_form_data\Data( new vk_form_data\input\Input );
 
         $options = [
             [

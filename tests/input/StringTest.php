@@ -25,7 +25,7 @@ final class StringTest extends TestCase
 
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'key', 'POST', true );
 
@@ -40,7 +40,7 @@ final class StringTest extends TestCase
 
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'key', 'POST', true );
 
@@ -55,7 +55,7 @@ final class StringTest extends TestCase
 
         $_POST = array( 'key'=>'value' );
 
-        $input = new vk_form_input\Input();
+        $input = new vk_form_data\input\Input();
 
         $value = $input->get_string( 'key', 'POST', (bool)0  );
 
