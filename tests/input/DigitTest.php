@@ -58,7 +58,7 @@ final class DigitTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $value = $input->get_string( 'key', 'POST', (bool)0 );
+        $value = $input->get_digit( 'key', 'POST', (bool)0 );
 
         $this->assertEquals( '123', $value );
     }
@@ -72,7 +72,7 @@ final class DigitTest extends TestCase
 
         $input = new vk_form_input\Input();
 
-        $input->get_numeric( 'key', 'get', false );
+        $input->get_digit( 'key', 'get', false );
     }
 
     protected function tearDown() : void

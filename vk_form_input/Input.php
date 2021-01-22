@@ -33,7 +33,7 @@ class Input
 
         $digit =  $this->escape_text_field( $raw_digit, $escape );
 
-        if( ctype_digit( $digit || empty( $digit ) ) )
+        if( ctype_digit( $digit ) || empty( $digit ) )
             return $digit;
         else
             throw new \Exception("VK_input: The string does not contain only digits", 111);
