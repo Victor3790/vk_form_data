@@ -70,13 +70,13 @@ class Input
 
         switch ( $lower_request ) {
             case 'post':
-                $value = (isset($_POST[$key])) ? $_POST[$key] : false;
-                $value = (!empty($value)) ? $value : $default;
+                $set = (isset($_POST[$key])) ? true : false;
+                $value = ($set) ? $_POST[$key] : $default;
                 break;
 
             case 'get':
-                $value = (isset($_GET[$key])) ? $_GET[$key] : false;
-                $value = (!empty($value)) ? $value : $default;
+                $set = (isset($_GET[$key])) ? true : false;
+                $value = ($set) ? $_GET[$key] : $default;
                 break;
             
             default:

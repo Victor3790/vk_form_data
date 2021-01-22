@@ -104,26 +104,73 @@ final class NumericTypeTest extends TestCase
         $form_data->get();
     }
 
-    //Value out of range
-    public function testValueOutOfRange(): void
+    //Value out of range before
+    public function testValueOutOfRangeBefore(): void
     {
+        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+
         $this->expectExceptionCode(303);
 
-        $_GET = [ 'month' => '120' ];
-
-        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+        $_GET = [ 'month' => '-5' ];
 
         $options = [
             [
                 'input_name' => 'month',
                 'type' => 'numeric',
-                'validation' => [ 1, 12, 'three' ]
+                'validation' => [ 1, 12 ]
             ]
         ];
 
         $form_data->set_options( $options, 'get' );
 
-        $form_data->get();
+
+        $numeric = $form_data->get();
+    }
+
+    //Value out of range zero
+    public function testValueOutOfRangeZero(): void
+    {
+        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+
+        $this->expectExceptionCode(303);
+
+        $_GET = [ 'month' => '0' ];
+
+        $options = [
+            [
+                'input_name' => 'month',
+                'type' => 'numeric',
+                'validation' => [ 1, 12 ]
+            ]
+        ];
+
+        $form_data->set_options( $options, 'get' );
+
+
+        $numeric = $form_data->get();
+    }
+
+    //Value out of range after
+    public function testValueOutOfRangeAfter(): void
+    {
+        $form_data = new vk_form_data\Data( new vk_form_input\Input );
+
+        $this->expectExceptionCode(303);
+
+        $_GET = [ 'month' => '20' ];
+
+        $options = [
+            [
+                'input_name' => 'month',
+                'type' => 'numeric',
+                'validation' => [ 1, 12 ]
+            ]
+        ];
+
+        $form_data->set_options( $options, 'get' );
+
+
+        $numeric = $form_data->get();
     }
 
     //Value in range
@@ -151,6 +198,8 @@ final class NumericTypeTest extends TestCase
             $numeric = $form_data->get();
     
             $this->assertEquals( $i, $numeric['month'] );
+
+            //echo $numeric['month'] . ' ';
 
         }
     }

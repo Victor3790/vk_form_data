@@ -8,7 +8,7 @@ use Brain\Monkey;
 ** data to get is string
 */
 
-final class NumericTypeTest extends TestCase
+final class NumericTypeTestData extends TestCase
 {
     protected function setUp() : void
     {
