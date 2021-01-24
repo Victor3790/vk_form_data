@@ -21,10 +21,10 @@ class Input
 
         $numeric =  $this->escape_text_field( $raw_numeric, $escape );
 
-        if( !is_numeric( $numeric ) )
-            throw new \Exception("VK_input: The value is not numeric", 106);
-
-        return $numeric;
+        if( is_numeric( $numeric ) || is_null( $numeric ) )
+            return $numeric;
+        else    
+            throw new \Exception("VK_input: " . $key . " : " . $numeric . " is not numeric", 106);
     }
 
     public function get_digit( $key = null, $request = null, $escape = false, $default = null )
@@ -49,12 +49,17 @@ class Input
 
         $raw_date_time = $this->get_data( $key, $default, $request );
 
+        if( is_null( $raw_date_time ) )
+            return null;
+
         $date_time =  $this->escape_text_field( $raw_date_time, $escape );
 
         $date_time_object = \DateTime::createFromFormat( $format, $date_time );
 
         if( $date_time_object === false )
-            throw new \Exception("VK_input: Date-time value or its format were not valid.", 109);
+            throw new \Exception("VK_input: Date-time value or its format were not valid. " . 
+                                    "In " . $key . " " , 
+                                    109);
 
         $format_date_time = $date_time_object->format($format);
 

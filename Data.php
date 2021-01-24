@@ -76,6 +76,9 @@ class Data
                         $sanitize
                     );
 
+                    if( is_null( $raw_value ) )
+                        continue 2;
+
                     $valid = $string_type->get_valid_string( $input_options, $raw_value );
                     break;
 
@@ -87,6 +90,9 @@ class Data
                         $this->request,
                         $sanitize
                     );
+
+                    if( is_null( $raw_value ) )
+                        continue 2;
 
                     $valid = $numeric_type->get_valid_numeric( $input_options, $raw_value );
                     break;
@@ -100,6 +106,9 @@ class Data
                         $sanitize
                     );
 
+                    if( is_null( $raw_value ) )
+                        continue 2;
+
                     $valid = $digit_type->get_valid_string( $input_options, $raw_value );
                     break;
 
@@ -112,6 +121,9 @@ class Data
                         $input_options['validation'][0],
                         $sanitize
                     );
+
+                    if( is_null( $raw_value ) )
+                        continue 2;
 
                     $valid = $date_time_type->get_valid_string( $input_options, $raw_value );
                     break;
