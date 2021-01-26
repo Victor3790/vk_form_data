@@ -13,6 +13,8 @@ Required parameters:
                                 3.- date_time:  Evaluates using is_string() and functions from 
                                                       the DateTime  object
                                 4.- digit:      Evaluates using is_string() and ctype_digit()
+                                5.- array:      Evaluates using is_array() and checking if every element in get or
+                                                post is a member of the validation array
       validation:          The validation option is an array that contains the conditions to evaluate the input.
 
 Optional parameters:
