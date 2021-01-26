@@ -69,6 +69,28 @@ class Input
         return $date_time;
     }
 
+    public function get_array( $key = null, $request = null, $escape = false, $default = null )
+    {
+        $raw_array = $this->get_data( $key, $default, $request );
+
+        if( !is_array( $raw_array ) && !is_null( $raw_array ) )
+            throw new \Exception("VK_input: " . $key . " is not an array or null", 112);
+
+        if( $escape === false )
+            return $raw_array;
+
+        $valid_array = array();
+
+        foreach ($raw_array as $raw_value) {
+            
+            $value = $this->escape_text_field( $raw_value, $escape );
+            array_push( $valid_array, $value );
+
+        }
+
+        return $valid_array;
+    }
+
     private function get_data( $key = null, $default = null, $request = null )
     {
         if( empty( $key ) )

@@ -7,6 +7,7 @@ namespace vk_form_data;
 include_once 'input/Input.php';
 include_once 'string/String_Type.php';
 include_once 'numeric/Numeric_Type.php';
+include_once 'array/Array_Type.php';
 
 use vk_form_data\input;
 use vk_form_data\string_type;
@@ -126,6 +127,21 @@ class Data
                         continue 2;
 
                     $valid = $date_time_type->get_valid_string( $input_options, $raw_value );
+                    break;
+
+                case 'array':
+                    $array_type = new array_type\Array_Type;
+
+                    $raw_array = $this->input->get_array( 
+                        $input_options['input_name'], 
+                        $this->request,
+                        $sanitize
+                    );
+
+                    if( is_null( $raw_array ) )
+                        continue 2;
+
+                    $valid = $array_type->get_valid_array( $input_options, $raw_array );
                     break;
                 
                 default:
