@@ -9,20 +9,18 @@ use PHPUnit\Framework\TestCase;
 
 final class DefaultTest extends TestCase
 {
+    protected $input;
+
     protected function setUp() : void
     {
-        parent::setUp();
-        $_POST = array();
+        $_POST = array( 'key'=>'value' );
+        $this->input = new vk_form_data\input\Input();
     }
 
     //A value in "default" is passed and "key" does not exist (int)
     public function testADefaultIntValueWasPassed(): void
     {
-        $_POST = array( 'key'=>'value' );
-
-        $input = new vk_form_data\input\Input();
-
-        $value = $input->get_string( 'key1','post', false, -1 );
+        $value = $this->input->get_string( 'key1','post', false, -1 );
 
         $this->assertEquals( -1, $value );
     }
@@ -30,11 +28,7 @@ final class DefaultTest extends TestCase
     //A value in "default" is passed and "key" does not exist (string)
     public function testADefaultStringValueWasPassed(): void
     {
-        $_POST = array( 'key'=>'value' );
-
-        $input = new vk_form_data\input\Input();
-
-        $value = $input->get_string( 'key1','post', false, 'No value' );
+        $value = $this->input->get_string( 'key1','post', false, 'No value' );
 
         $this->assertEquals( 'No value', $value );
     }
@@ -42,11 +36,7 @@ final class DefaultTest extends TestCase
     //A value in "default" is not passed and "key" does not exist
     public function testADefaultValueWasNotPassed(): void
     {
-        $_POST = array( 'key'=>'value' );
-
-        $input = new vk_form_data\input\Input();
-
-        $value = $input->get_string( 'key1','post', false );
+        $value = $this->input->get_string( 'key1','post', false );
 
         $this->assertEquals( null, $value );
     }
