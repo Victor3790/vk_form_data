@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
+use vk_form_data\input\Input;
 
 /*
 ** In case the "key" does not exist in
@@ -14,7 +15,7 @@ final class DefaultTest extends TestCase
     protected function setUp() : void
     {
         $_POST = array( 'key'=>'value' );
-        $this->input = new vk_form_data\input\Input();
+        $this->input = new Input();
     }
 
     //A value in "default" is passed and "key" does not exist (int)
