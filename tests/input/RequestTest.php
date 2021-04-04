@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
+use vk_form_data\input\Input;
 
 /*
 ** The "request" parameter should contain the
@@ -8,11 +9,14 @@ use PHPUnit\Framework\TestCase;
 
 final class RequestTest extends TestCase
 {
+    protected $input;
+
     protected function setUp() : void
     {
-        parent::setUp();
-        $_POST  = array();
-        $_GET   = array();
+        //parent::setUp();
+        $_POST  = array( 'post_key' => 'post_value' );
+        $_GET   = array( 'get_key' => 'get_value' );
+        $this->input = new Input();
     }
 
     //An http request type must be passed
@@ -20,9 +24,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(102);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string( 'key' );
+        $this->input->get_string( 'key' );
     }
 
     //The "request" parameter must be a string
@@ -30,9 +32,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(103);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string( 'key', 1 );
+        $this->input->get_string( 'key', 1 );
     }
 
     //The "request" parameter must be a non numeric string
@@ -40,9 +40,7 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(103);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string( 'key', '1' );
+        $this->input->get_string( 'key', '1' );
     }
 
     //The "request" parameter must be "POST" or "GET"
@@ -50,20 +48,13 @@ final class RequestTest extends TestCase
     {
         $this->expectExceptionCode(104);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string( 'key', 'request' );
+        $this->input->get_string( 'key', 'request' );
     }
 
     //Request can be upper case
     public function testRequestCanBeUpperCase(): void
     {
-        $_POST = array( 'post_key' => 'post_value' );
-        $_GET  = array( 'get_key' => 'get_value' );
-
-        $input = new vk_form_data\input\Input();
-
-        $value = $input->get_string( 'get_key', 'GET' );
+        $value = $this->input->get_string( 'get_key', 'GET' );
 
         $this->assertEquals( 'get_value', $value );
     }
@@ -71,12 +62,7 @@ final class RequestTest extends TestCase
     //Request can be lower case
     public function testRequestCanBeLowerCase(): void
     {
-        $_POST = array( 'post_key' => 'post_value' );
-        $_GET  = array( 'get_key' => 'get_value' );
-
-        $input = new vk_form_data\input\Input();
-
-        $value = $input->get_string( 'get_key', 'get' );
+        $value = $this->input->get_string( 'get_key', 'get' );
 
         $this->assertEquals( 'get_value', $value );
     }
@@ -84,12 +70,7 @@ final class RequestTest extends TestCase
     //Request can be upper and lower case
     public function testRequestCanBeUpperAndLowerCase(): void
     {
-        $_POST = array( 'post_key' => 'post_value' );
-        $_GET  = array( 'get_key' => 'get_value' );
-
-        $input = new vk_form_data\input\Input();
-
-        $value = $input->get_string( 'post_key', 'PoSt' );
+        $value = $this->input->get_string( 'post_key', 'PoSt' );
 
         $this->assertEquals( 'post_value', $value );
     }
