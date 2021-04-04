@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
+use vk_form_data\input\Input;
 
 /*
 ** The key parameter is a string that
@@ -8,14 +9,19 @@ use PHPUnit\Framework\TestCase;
 
 final class KeyTest extends TestCase
 {
+    protected $input;
+
+    protected function setUp() : void
+    {
+        $this->input = new Input();
+    }
+
     //A key in $_POST must be passed
     public function testAPostKeyParameterMustBePassed(): void
     {
         $this->expectExceptionCode(100);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string();
+        $this->input->get_string();
     }
 
     //The key will be tested with empty() (It must not be empty)
@@ -23,9 +29,7 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(100);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string(0, 0);
+        $this->input->get_string(0, 0);
     }
 
     //The key can't be a number or a numeric string
@@ -33,9 +37,7 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(101);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string(2, 0);
+        $this->input->get_string(2, 0);
     }
 
     //The key can't be a number or a numeric string
@@ -43,8 +45,6 @@ final class KeyTest extends TestCase
     {
         $this->expectExceptionCode(101);
 
-        $input = new vk_form_data\input\Input();
-
-        $input->get_string('2', 0);
+        $this->input->get_string('2', 0);
     }
 }
