@@ -13,7 +13,6 @@ final class RequestTest extends TestCase
 
     protected function setUp() : void
     {
-        //parent::setUp();
         $_POST  = array( 'post_key' => 'post_value' );
         $_GET   = array( 'get_key' => 'get_value' );
         $this->input = new Input();
