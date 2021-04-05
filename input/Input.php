@@ -27,6 +27,20 @@ class Input
             throw new \Exception("VK_input: " . $key . " : " . $numeric . " is not numeric", 106);
     }
 
+    public function get_integer( $key = null, $request = null, $escape = false, $default = null )
+    {
+        $raw_integer = $this->get_data( $key, $default, $request );
+
+        $integer =  $this->escape_text_field( $raw_integer, $escape );
+
+        $is_integer = ( $integer === (string)(int)$integer ) ? true : false;
+
+        if( $is_integer || is_null( $integer ) )
+            return $integer;
+        else    
+            throw new \Exception("VK_input: " . $key . " : " . $integer . " is not integer", 116);
+    }
+
     public function get_digit( $key = null, $request = null, $escape = false, $default = null )
     {
         $raw_digit = $this->get_data( $key, $default, $request );
