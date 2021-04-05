@@ -214,7 +214,7 @@ final class NumericTypeTest extends TestCase
 
         for ( $i=$min; $i <= $max ; $i += 0.1 ) { 
 
-            $_GET = [ 'temp' => $i ];
+            $_GET = [ 'temp' => (string)$i ];
 
             $options = [
                 [
